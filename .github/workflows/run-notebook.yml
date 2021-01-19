@@ -35,7 +35,7 @@ jobs:
     - name: Add Papermill & View Kernels |
       shell: bash
       run: |
-        source activate agu-ossi-2020
+        source activate ea-python
         conda install -c conda-forge papermill
         jupyter kernelspec list
 
