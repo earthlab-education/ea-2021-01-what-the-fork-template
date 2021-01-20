@@ -45,9 +45,3 @@ jobs:
         # Loop through all notebooks and run them using papermill
         for i in *.ipynb; do papermill $i testing.ipynb || break;
         done
-
-    - name: Run notebook
-      run: |
-        # If you wanted you could automate this workflow to run all notebooks
-        source activate ea-python
-        papermill ea-2021-01-what-the-fork.ipynb testing.ipynb
