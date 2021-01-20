@@ -42,8 +42,8 @@ jobs:
     - name: Run all notebooks
       run:
         source activate ea-python
-        for i in *.ipynb; do
-          papermill $i testing.ipynb || break
+        # Loop through all notebooks and run them using papermill
+        for i in *.ipynb; do papermill $i testing.ipynb || break;
         done
 
     - name: Run notebook
