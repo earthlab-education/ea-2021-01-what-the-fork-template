@@ -39,6 +39,13 @@ jobs:
         conda install -c conda-forge papermill
         jupyter kernelspec list
 
+    - name: Run all notebooks
+      run:
+        source activate ea-python
+        for i in *.ipynb; do
+          papermill $i testing.ipynb || break
+        done
+
     - name: Run notebook
       run: |
         # If you wanted you could automate this workflow to run all notebooks
